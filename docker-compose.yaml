@@ -1,0 +1,11 @@
+version: "3.4"
+services:
+  dnsmasq:
+    image: jpillora/dnsmasq:latest
+    volumes: 
+      - ./opt/dnsmasq.conf:/etc/dnsmasq.conf
+    env_file:
+      - .docker-dev
+    ports:
+      - "5380:8080"
+      - "53:53/udp"
